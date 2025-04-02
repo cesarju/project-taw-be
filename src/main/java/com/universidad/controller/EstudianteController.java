@@ -33,7 +33,7 @@ public class EstudianteController { // Defi   ne la clase EstudianteController
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoEstudiante);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/estudiantes/{id}")
     public ResponseEntity<EstudianteDTO> actualizarEstudiante(
             @PathVariable Long id,
             @RequestBody EstudianteDTO estudianteDTO) {
@@ -42,7 +42,7 @@ public class EstudianteController { // Defi   ne la clase EstudianteController
     }
 
     // Eliminar un estudiante
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/estudiantes/{id}")
     public ResponseEntity<Void> eliminarEstudiante(@PathVariable Long id) {
         estudianteService.eliminarEstudiante(id);
         return ResponseEntity.noContent().build();
